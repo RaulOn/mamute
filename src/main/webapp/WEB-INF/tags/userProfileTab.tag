@@ -21,7 +21,7 @@
 					<c:if test="${!sameUser}">
 						<li>
 							<a class="ban-user" title="${t['user_profile.ban.tootip']}" href="#" data-url="${linkTo[UserProfileController].toogleBanned(selectedUser)}">
-								${t[selectedUser.isBanned() ? 'user_profile.undo_ban' : 'user_profile.ban']}
+								${t[selectedUser.isBanned() ? 'user_profile.undo_ban' : 'user_profile.ban']}								
 							</a>
 						</li>
 					</c:if>

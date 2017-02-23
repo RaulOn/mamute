@@ -690,7 +690,7 @@
 			    <artifactId>grunt-maven-plugin</artifactId>
 			    <version>1.4.1</version>
 			    <configuration>
-                    <gruntExecutable>node_modules/grunt-cli/bin/grunt</gruntExecutable>
+<!--                     <gruntExecutable>C:\git-projects\mamute\node_modules\grunt-cli\bin\grunt</gruntExecutable> -->
 			        <gruntOptions>
                         <gruntOption>--verbose</gruntOption>
                     </gruntOptions>

@@ -14,7 +14,7 @@ public class GruntRunner implements Runnable{
 	public void run() {
 		System.out.println("Executing grunt...");
 		try {
-			Process exec = new ProcessBuilder("mvn", "grunt:grunt", "-Dmamute.grunt.task=run").inheritIO().start();
+			Process exec = new ProcessBuilder("C:/apache-maven-3.0.5/bin/mvn.bat", "grunt:grunt", "-Dmamute.grunt.task=run").inheritIO().start();
 			int value = exec.waitFor();
 			if (value != 0) {
 				System.err.println("Grunt call failed with exit value: " + value);
