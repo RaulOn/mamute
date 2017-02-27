@@ -691,6 +691,8 @@
 			    <version>1.4.1</version>
 			    <configuration>
 <!--                     <gruntExecutable>C:\git-projects\mamute\node_modules\grunt-cli\bin\grunt</gruntExecutable> -->
+                    <gruntExecutable>../node_modules/grunt-cli/bin/grunt</gruntExecutable>
+                    <runGruntWithNode>true</runGruntWithNode>
 			        <gruntOptions>
                         <gruntOption>--verbose</gruntOption>
                     </gruntOptions>
@@ -733,8 +735,10 @@
 							<goal>exec</goal>
 						</goals>
 						<configuration>
-							<executable>scripts/post-build.sh</executable>
+							<executable>bash</executable>
+							<!--<executable>scripts/post-build.sh</executable>-->
 							<arguments>
+								<argument>scripts/post-build.sh</argument>
 								<argument>${maven.build.timestamp}</argument>
 							</arguments>
 						</configuration>

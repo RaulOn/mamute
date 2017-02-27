@@ -1,16 +1,16 @@
 #!/bin/bash
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-MAMUTE_DIR=$SCRIPT_DIR
-
 TIMESTAMP=BUILD_TIMESTAMP
+MAMUTE_DIR=`cygpath -w -a .`
+CP_LIST="`cygpath -w -a WEB-INF/classes/`;`cygpath -w -a WEB-INF/lib/* | tr '\\n' ';'`"
 
-WEB_INF=${SCRIPT_DIR}/WEB-INF
+echo $CP_LIST
+echo $MAMUTE_DIR
 
-java -cp ${WEB_INF}/classes/:${WEB_INF}/lib/* \
+java -cp $CP_LIST \
     -Ddeploy.timestamp=$TIMESTAMP \
     -Dvraptor.webappdir=${MAMUTE_DIR} \
+    -Dserver.port=8282\
     ${MAMUTE_OPTS} \
     br.com.caelum.vraptor.server.Main \
-	not-grunt
+    not-grunt
